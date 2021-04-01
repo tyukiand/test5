@@ -2,9 +2,10 @@ name: Draw Sierpinski triangle
 on:
   workflow_dispatch:
     inputs:
-      name: iters
-      description: Number of iterations
-      default: 4
+      iters:
+        description: 'Number of iterations'
+        required: true
+        default: 4
 jobs:
   draw_the_triangle:
     runs-on: ubuntu-18.04
