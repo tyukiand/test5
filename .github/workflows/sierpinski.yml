@@ -1,6 +1,6 @@
 name: Draw Sierpinski triangle
 on:
-  worflow_dispatch:
+  workflow_dispatch:
     inputs:
       name: iters
       description: Number of iterations
