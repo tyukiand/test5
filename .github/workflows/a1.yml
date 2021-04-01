@@ -1,0 +1,13 @@
+name: a1
+on: [push]
+jobs:
+  j1:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: ps -p $$
+      - run: echo $PATH $USER
+      - run: pwd
+      - run: ls -la
+      - run: uname -a
+      - run: lshw -short
+      - run: ip link show
