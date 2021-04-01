@@ -1,5 +1,5 @@
 name: a1
-on: [push]
+on: workflow_dispatch
 jobs:
   j1:
     runs-on: ubuntu-20.04
