@@ -1,19 +1,20 @@
-name: a2
+name: Manually triggered workflow
 on:
   workflow_dispatch:
     inputs:
-      x:
-        description: 'The value of `x`'
+      name:
+        description: 'Person to greet'
         required: true
-        default: '42'
-      y:
-        description: 'The value of `y`'
+        default: 'Mona the Octocat'
+      home:
+        description: 'location'
         required: false
-        default: '0'
+        default: 'The Octoverse'
+
 jobs:
-  echo_xy:
+  say_hello:
     runs-on: ubuntu-latest
     steps:
     - run: |
-        echo "The provided value of `x` was ${{ github.event.inputs.x }}"
-        echo "The provided value of `y` was ${{ github.event.inputs.y }}"
+        echo "Hello ${{ github.event.inputs.name }}!"
+        echo "- in ${{ github.event.inputs.home }}!"
