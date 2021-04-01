@@ -1,0 +1,19 @@
+name: a2
+on:
+  workflow_dispatch:
+    inputs:
+      x:
+        description: 'The value of `x`'
+        required: true
+        default: '42'
+      y:
+        description: 'The value of `y`'
+        required: false
+        default: '0'
+jobs:
+  echo_xy:
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "The provided value of `x` was ${{ github.event.inputs.x }}"
+        echo "The provided value of `y` was ${{ github.event.inputs.y }}"
