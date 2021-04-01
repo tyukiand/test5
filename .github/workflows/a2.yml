@@ -1,20 +1,15 @@
-name: Manually triggered workflow
+name: a2
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Person to greet'
+        description: 'Some value'
         required: true
-        default: 'Mona the Octocat'
-      home:
-        description: 'location'
-        required: false
-        default: 'The Octoverse'
+        default: 'the default value'
 
 jobs:
   say_hello:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
     steps:
     - run: |
-        echo "Hello ${{ github.event.inputs.name }}!"
-        echo "- in ${{ github.event.inputs.home }}!"
+        echo blah blah blah ${{ github.event.inputs.name }} blah blah blah
